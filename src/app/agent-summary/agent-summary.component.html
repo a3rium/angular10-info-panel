@@ -1,0 +1,23 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Agent Summary</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <div>
+            <mat-icon mat-card-avatar class="agent-avatar-image avatar">account_circle</mat-icon>
+            <p>{{agentSummary.agentMessage}}</p>
+        </div>
+        <div>
+            <mat-icon mat-card-avatar class="type-avatar-image avatar">info</mat-icon>
+            <p>{{agentSummary.agentType}}</p>
+        </div>
+        <div>
+            <mat-icon mat-card-avatar class="rating-avatar-image avatar">thumb_up</mat-icon>
+            <p><app-rating-slider [agentRating]="agentSummary.agentRating"></app-rating-slider></p>
+        </div>
+        <div>
+            <div mat-card-avatar class="hazard-avatar-image avatar"></div>
+            <p><span *ngFor="let item of agentSummary.agentHazards; last as isLast">{{item}}<span *ngIf="!isLast">, </span></span></p>
+        </div>
+    </mat-card-content>
+</mat-card>
